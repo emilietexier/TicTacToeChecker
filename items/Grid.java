@@ -3,24 +3,16 @@ public class Grid {
     public char[][] grid;
 
     public Grid(char[][] grid){
-        this.grid = grid;
+        this.grid = grid; //each element is filled with 'X', 'O' or a blank
     }
 
-    public char checkState(){ //returns X, O or ?
-        boolean line_win = true;
-        boolean column_win = true;
-        boolean diagonal_win = true;
-        for(int i = 0; i < Constants.dimension; ++i) {
-            for (int j = 0; j < Constants.dimension; ++j) {
-                if (grid[i][j] != grid[0][j]) {
-                    line_win = false;
-                }
-                if (grid[j][i] != grid[i][0]) {
-                    column_win = false;
-                }
-                if (i == j && grid[i][j] != grid[0][0]) {
-                    diagonal_win = false;
-                }
+    public char checkState(){ //returns X if player X wins, O if player O wins or ? if the outcome is tbd
+        for(int i = 0; i < 3; ++i){ //check lines and columns
+            boolean line_win = true;
+            boolean column_win = true;
+            for(int j = 0; j < 3; ++j){
+                if(grid[i][j] != grid[i][0]){line_win = false;}
+                if(grid[j][i] != grid[0][i]){column_win = false;}
             }
             if(line_win){
                 if(grid[i][0] == 'X'){return 'X';}
@@ -30,10 +22,12 @@ public class Grid {
                 if(grid[0][i] == 'X'){return 'X';}
                 else if(grid[0][i] == 'O'){return 'O';}
             }
-            if(diagonal_win){
-                if(grid[0][0] == 'X'){return 'X';}
-                else if(grid[0][0] == 'O'){return 'O';}
-            }
         }
-        return '?';
+        if((grid[0][0] == grid[1][1]  && grid[1][1] == grid[2][2]) ||
+        (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0])){
+            if(grid[1][1] == 'X'){return 'X';}
+            else if(grid[1][1] == 'O'){return 'O';}
+        }
+        return '?'; //outcome is tbd if no win or if three aligned is always three blanks
     }
+}
