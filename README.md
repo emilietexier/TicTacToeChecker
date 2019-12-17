@@ -4,6 +4,18 @@ This is an assignment done as part of the Technical recruitment process at R3.
 
 I was given a challenge: write a game verifier for noughts and crosses.
 
+## Prerequisites
+
+```Java 1.8 version```
+
+## Usage
+
+1. Download the repository
+2. Using the command line, go to the test folder of the repository
+3. Do ```javac Test.java```
+4. Do ```java Test``` 
+
+
 ## Overview
 
 ### Noughts and Crosses
@@ -38,9 +50,8 @@ We are looking for a line or a column where all elements are the same. Therefore
 Otherwise, if we haven't found anything interesting with lines and columns, the function will also check the two diagonals. I have made the choice of using a simple if statement in this case rather than a for loop to make the code more readable. Again, if all elements of a diagonal are 'X's or 'O's, we will return the corresponding character.
 Finally, if we haven't returned anything yet, it means that there are no three 'X's or 'O's aligned in this grid and therefore the outcome of the game is yet to be determined. In this case, we simply return '?'.
 
-## How to run the application
+## Test class
 
-### Test class
 
 The test class allows us to test the checker function with all possible cases. Indeed, I have implemented a random array of characters generator which generates a two dimension array of 'X's, 'O's and blank spaces. The probabilities of obtaining an 'X', a 'O' or a blank are equals.
 When the test is running, the generated array is also printed in the console as well as the result given by the checker function.
@@ -48,3 +59,5 @@ For the array generator, I used the Java Random class and generated a random int
 Obtaining a zero would mean filling the space with an 'X', obtaining a 1 with a 'O' and obtaining a 2 with a blank. 
 Once the array is filled, I declare a grid instance from the Grid class using the generated array. Finally, the checker function is called on this grid.
 There is no operation to be done on the user's end because when the test runs, it automatically generates a grid, checks it with the checker function and prints both the grid and the result obtained through the checker function. 
+
+ 
