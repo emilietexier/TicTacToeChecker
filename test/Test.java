@@ -3,9 +3,9 @@ import java.util.Random;
 public class Test {
     public static void main(String[] args){
         //We will generate a random character array to be tested by the game verifier
-        char[][] arr = new char[Constants.dimension][Constants.dimension];
-        for(int i = 0; i < Constants.dimension; ++i){
-            for(int j = 0; j < Constants.dimension; ++j){
+        char[][] arr = new char[3][3];
+        for(int i = 0; i < 3; ++i){
+            for(int j = 0; j < 3; ++j){
                 Random randomGenerator = new Random();
                 int randomInt = randomGenerator.nextInt(3); //generates a random int between 0, 1 and 2
                 switch(randomInt) {
@@ -35,7 +35,5 @@ public class Test {
                 System.out.println("The outcome of the game is still to be determined.");
                 break;
         }
-
     }
-
 }
