@@ -6,14 +6,22 @@ I was given a challenge: write a game verifier for noughts and crosses.
 
 ## Prerequisites
 
-```Java 1.8 version```
+```
+Java 1.8 version
+```
 
 ## Usage
 
 1. Download the repository
 2. Using the command line, go to the test folder of the repository
-3. Do ```javac Test.java```
-4. Do ```java Test``` 
+3. Execute 
+```
+javac Test.java
+```
+4. Execute 
+```
+java Test
+``` 
 
 
 ## Overview
